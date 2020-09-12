@@ -31,4 +31,4 @@ unzip yolo_data.zip
 
 ./darknet
 
-./darknet detector train data/broker/obj.data cfg/yolov4-tiny-custom.cfg yolov4-tiny.conv.29
+./darknet detector train yolo_data/obj.data cfg/yolov4-tiny-custom.cfg yolov4-tiny.conv.29
