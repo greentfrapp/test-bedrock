@@ -2,7 +2,7 @@ version = "1.0"
 
 train {
     step train {
-        image = "nvidia/cuda:11.0-cudnn8-devel-ubuntu18.04"
+        image = "nvidia/cuda:10.1-cudnn8-devel"
         script = [{sh = ["bash train.sh"]}]
         resources {
             cpu = "1"
