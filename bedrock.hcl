@@ -14,6 +14,7 @@ train {
     parameters {
         NUM_STEPS = "40000"
         NUM_CLASSES = "4"
+        LEARNING_RATE = "0.00261"
         GOOGLE_FILE_ID = "1dfD1k77WL_xFmYXUOZOAqTnRUrtF2FaR"
     }
 }
