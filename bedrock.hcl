@@ -2,7 +2,7 @@ version = "1.0"
 
 train {
     step train {
-        image = "basisai/workload-standard:v0.2.1"
+        image = "nvidia/cuda:11.0-cudnn8-devel-ubuntu18.04"
         script = [{sh = ["bash train.sh"]}]
         resources {
             cpu = "0.5"
