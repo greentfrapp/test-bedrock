@@ -15,15 +15,20 @@ sed -i '212s/.*/filters=27/' cfg/yolov4-tiny-custom.cfg
 sed -i '220s/.*/classes=4/' cfg/yolov4-tiny-custom.cfg
 sed -i '263s/.*/filters=27/' cfg/yolov4-tiny-custom.cfg
 sed -i '269s/.*/classes=4/' cfg/yolov4-tiny-custom.cfg
+
+apt-get -y install wget
 wget https://github.com/AlexeyAB/darknet/releases/download/darknet_yolo_v4_pre/yolov4-tiny.conv.29
 
 wget --load-cookies /tmp/cookies.txt "https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate 'https://docs.google.com/uc?export=download&id=1dfD1k77WL_xFmYXUOZOAqTnRUrtF2FaR' -O- | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=1dfD1k77WL_xFmYXUOZOAqTnRUrtF2FaR" -O yolo_data.zip && rm -rf /tmp/cookies.txt
 
+apt-get -y install unzip
 unzip yolo_data.zip
 
 # pip install --upgrade pip
 # pip install -r requirements.txt
 
 # python download_data.py
+
+./darknet
 
 ./darknet detector train data/broker/obj.data cfg/yolov4-tiny-custom.cfg yolov4-tiny.conv.29
