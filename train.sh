@@ -30,5 +30,3 @@ unzip yolo_data.zip
 # python download_data.py
 
 ./darknet detector train yolo_data/obj.data cfg/yolov4-tiny-custom.cfg yolov4-tiny.conv.29
-
-mv backup/yolov4-tiny-custom_last.weights /artefact/
