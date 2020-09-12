@@ -5,8 +5,8 @@ train {
         image = "nvidia/cuda:11.0-cudnn8-devel-ubuntu18.04"
         script = [{sh = ["bash train.sh"]}]
         resources {
-            cpu = "0.5"
-            memory = "1G"
+            cpu = "1"
+            memory = "8G"
             gpu = "1"
         }
     }
