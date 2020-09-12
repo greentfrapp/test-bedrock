@@ -1,3 +1,6 @@
+apt-get update
+apt-get -y install git
+
 git clone https://github.com/AlexeyAB/darknet.git
 
 sed -i '1s/.*/GPU=1/' darknet/Makefile
