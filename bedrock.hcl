@@ -12,15 +12,9 @@ train {
     }
 
     parameters {
-        RAW_SUBSCRIBERS_DATA = "gs://bedrock-sample/churn_data/subscribers.gz.parquet"
-        RAW_CALLS_DATA = "gs://bedrock-sample/churn_data/all_calls.gz.parquet"
-        TEMP_DATA_BUCKET = "gs://span-temp-production/"
-        PREPROCESSED_DATA = "churn_data/preprocessed"
-        FEATURES_DATA = "churn_data/features.csv"
-        LR = "0.05"
-        NUM_LEAVES = "10"
-        N_ESTIMATORS = "100"
-        OUTPUT_MODEL_NAME = "lgb_model.pkl"
+        NUM_STEPS = "40000"
+        NUM_CLASSES = "4"
+        GOOGLE_FILE_ID = "1dfD1k77WL_xFmYXUOZOAqTnRUrtF2FaR"
     }
 }
 
