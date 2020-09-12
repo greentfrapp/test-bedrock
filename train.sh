@@ -30,3 +30,6 @@ unzip yolo_data.zip
 # python download_data.py
 
 ./darknet detector train yolo_data/obj.data cfg/yolov4-tiny-custom.cfg yolov4-tiny.conv.29
+
+echo $NUM_LEAVES
+echo $(($NUM_LEAVES * 2))
