@@ -24,6 +24,8 @@ wget --load-cookies /tmp/cookies.txt "https://docs.google.com/uc?export=download
 apt-get -y install unzip
 unzip yolo_data.zip
 
+chmod +x yolo_data/*
+
 # pip install --upgrade pip
 # pip install -r requirements.txt
 
