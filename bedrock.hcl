@@ -9,7 +9,6 @@ train {
             memory = "1G"
             gpu = "1"
         }
-        depends_on = ["generate_features"]
     }
 
     parameters {
