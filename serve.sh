@@ -9,9 +9,6 @@ sed -i '7s/.*/LIBSO=1/' darknet/Makefile
 sed -i '35s/.*/ARCH= -gencode arch=compute_75,code=[sm_75,compute_75]/' darknet/Makefile
 cd darknet && make
 
-sed -i "18s/.*/learning_rate=$LEARNING_RATE/" cfg/yolov4-tiny-custom.cfg
-sed -i "20s/.*/max_batches=$NUM_STEPS/" cfg/yolov4-tiny-custom.cfg
-sed -i "22s/.*/steps=$(($NUM_STEPS / 10 * 8)),$(($NUM_STEPS / 10 * 9))/" cfg/yolov4-tiny-custom.cfg
 sed -i "212s/.*/filters=$((($NUM_CLASSES + 5) * 3))/" cfg/yolov4-tiny-custom.cfg
 sed -i "220s/.*/classes=$NUM_CLASSES/" cfg/yolov4-tiny-custom.cfg
 sed -i "263s/.*/filters=$((($NUM_CLASSES + 5) * 3))/" cfg/yolov4-tiny-custom.cfg
@@ -25,4 +22,4 @@ wget --load-cookies /tmp/cookies.txt "https://docs.google.com/uc?export=download
 apt-get -y install unzip
 unzip yolo_data.zip
 
-./darknet detector train $DATA_FOLDER/obj.data cfg/yolov4-tiny-custom.cfg yolov4-tiny.conv.29
+gunicorn --config gunicorn_config.py --bind=:${BEDROCK_SERVER_PORT:-8080} --worker-class=gthread --workers=${WORKERS} --timeout=300 --preload serve_http:app
