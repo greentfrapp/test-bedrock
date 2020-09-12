@@ -22,12 +22,12 @@ train {
 
 serve {
     image = "nvidia/cuda:10.1-cudnn8-devel"
-    install = [
-        "pip install --upgrade pip",
-        "pip install -r requirements-serve.txt",
-    ]
     script = [{sh = ["bash serve.sh"]}]
-
+    resources {
+        cpu = "1"
+        memory = "8G"
+        gpu = "1"
+    }
     parameters {
         NUM_CLASSES = "4"
         DATA_FOLDER = "yolo_data"
