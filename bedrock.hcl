@@ -30,6 +30,7 @@ serve {
     }
     parameters {
         NUM_CLASSES = "4"
+        GOOGLE_FILE_ID = "1dfD1k77WL_xFmYXUOZOAqTnRUrtF2FaR"
         DATA_FOLDER = "yolo_data"
         WORKERS = "2"
         prometheus_multiproc_dir = "/tmp"
