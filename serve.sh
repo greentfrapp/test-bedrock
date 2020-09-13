@@ -25,6 +25,7 @@ apt-get -y install unzip
 unzip yolo_data.zip
 
 apt-get -y install libgl1-mesa-glx
+apt-get -y install nvidia-driver-390
 
 cd ..
 
@@ -40,6 +41,6 @@ export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/cuda-10.1/lib64:/usr/local/c
 
 echo $PATH
 echo $LD_LIBRARY_PATH
-ls /usr/local/
+ls /usr/local/cuda/lib64
 
 gunicorn --config gunicorn_config.py --bind=:${BEDROCK_SERVER_PORT:-8080} --worker-class=gthread --workers=${WORKERS} --timeout=300 --preload serve_http:app
