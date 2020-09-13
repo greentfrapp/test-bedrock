@@ -33,7 +33,10 @@ pip3 install --upgrade pip
 pip3 install -r requirements-serve.txt
 pip3 install dataclasses
 
-#cp ./darknet/libdarknet.so ./libdarknet.so
+cp ./darknet/libdarknet.so ./libdarknet.so
+
+export PATH="$PATH:/usr/local/cuda-10.1/bin"
+export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/cuda-10.1/lib64:/usr/local/cuda/lib64"
 
 echo $PATH
 echo $LD_LIBRARY_PATH
