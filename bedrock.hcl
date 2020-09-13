@@ -25,7 +25,7 @@ serve {
     script = [{sh = ["bash serve.sh"]}]
     resources {
         cpu = "1"
-        memory = "8G"
+        memory = "2G"
         gpu = "1"
     }
     parameters {
