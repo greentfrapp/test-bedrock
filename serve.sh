@@ -22,7 +22,7 @@ wget --load-cookies /tmp/cookies.txt "https://docs.google.com/uc?export=download
 apt-get -y install unzip
 unzip yolo_data.zip
 
-apt-get -y install python3-pip
-pip3 install -r requirements-serve.txt
+# apt-get -y install python3-pip
+# pip3 install -r requirements-serve.txt
 
 gunicorn --config gunicorn_config.py --bind=:${BEDROCK_SERVER_PORT:-8080} --worker-class=gthread --workers=${WORKERS} --timeout=300 --preload serve_http:app
