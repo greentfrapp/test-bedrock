@@ -23,7 +23,6 @@ train {
 serve {
     image = "nvidia/cuda:10.1-cudnn8-devel"
     install = [
-        "apt-get -y install python3-pip",
         "pip3 install -r requirements-serve.txt",
     ]
     script = [{sh = ["bash serve.sh"]}]
