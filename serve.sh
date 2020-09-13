@@ -40,5 +40,6 @@ export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/cuda-10.1/lib64:/usr/local/c
 
 echo $PATH
 echo $LD_LIBRARY_PATH
+ls /usr/local/
 
 gunicorn --config gunicorn_config.py --bind=:${BEDROCK_SERVER_PORT:-8080} --worker-class=gthread --workers=${WORKERS} --timeout=300 --preload serve_http:app
