@@ -38,4 +38,6 @@ pip3 install dataclasses
 
 export DARKNET_PATH=./darknet/
 
+ls darknet
+
 gunicorn --config gunicorn_config.py --bind=:${BEDROCK_SERVER_PORT:-8080} --worker-class=gthread --workers=${WORKERS} --timeout=300 --preload serve_http:app
