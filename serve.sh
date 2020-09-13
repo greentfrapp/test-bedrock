@@ -25,7 +25,6 @@ apt-get -y install unzip
 unzip yolo_data.zip
 
 apt-get -y install libgl1-mesa-glx
-apt-get -y install nvidia-driver-390
 
 cd ..
 

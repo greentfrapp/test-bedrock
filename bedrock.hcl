@@ -6,7 +6,7 @@ train {
         script = [{sh = ["bash train.sh"]}]
         resources {
             cpu = "1"
-            memory = "8G"
+            memory = "2G"
             gpu = "1"
         }
     }
