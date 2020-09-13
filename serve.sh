@@ -14,6 +14,8 @@ sed -i "220s/.*/classes=$NUM_CLASSES/" cfg/yolov4-tiny-custom.cfg
 sed -i "263s/.*/filters=$((($NUM_CLASSES + 5) * 3))/" cfg/yolov4-tiny-custom.cfg
 sed -i "269s/.*/classes=$NUM_CLASSES/" cfg/yolov4-tiny-custom.cfg
 
+sed -i "223s/.*/    print(os.environ.get('DARKNET_PATH', './'))\n    lib = CDLL(os.path.join(" darknet.py
+
 apt-get -y install wget
 wget https://github.com/AlexeyAB/darknet/releases/download/darknet_yolo_v4_pre/yolov4-tiny.conv.29
 
@@ -39,5 +41,7 @@ pip3 install dataclasses
 export DARKNET_PATH=./darknet/
 
 ls darknet
+
+cp ./darknet/libdarknet.so ./libdarknet.so
 
 gunicorn --config gunicorn_config.py --bind=:${BEDROCK_SERVER_PORT:-8080} --worker-class=gthread --workers=${WORKERS} --timeout=300 --preload serve_http:app
