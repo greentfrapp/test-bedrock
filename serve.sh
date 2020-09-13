@@ -36,4 +36,6 @@ pip3 install dataclasses
 # pip3 install opencv-python==4.4.0.40
 # pip3 install Pillow==7.2.0
 
+export DARKNET_PATH=./darknet/
+
 gunicorn --config gunicorn_config.py --bind=:${BEDROCK_SERVER_PORT:-8080} --worker-class=gthread --workers=${WORKERS} --timeout=300 --preload serve_http:app
