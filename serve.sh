@@ -22,6 +22,8 @@ wget --load-cookies /tmp/cookies.txt "https://docs.google.com/uc?export=download
 apt-get -y install unzip
 unzip yolo_data.zip
 
+apt-get -y install libgl1-mesa-glx
+
 cd ..
 
 apt-get -y install python3-pip
