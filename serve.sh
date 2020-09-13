@@ -32,16 +32,10 @@ apt-get -y install python3-pip
 pip3 install --upgrade pip
 pip3 install -r requirements-serve.txt
 pip3 install dataclasses
-# pip3 install bdrk[model-monitoring]==0.4.0
-# pip3 install flask==1.1.2
-# pip3 install gunicorn==20.0.4
-# pip3 install opencv-python==4.4.0.40
-# pip3 install Pillow==7.2.0
 
-export DARKNET_PATH=./darknet/
+#cp ./darknet/libdarknet.so ./libdarknet.so
 
-ls darknet
-
-cp ./darknet/libdarknet.so ./libdarknet.so
+echo $PATH
+echo $LD_LIBRARY_PATH
 
 gunicorn --config gunicorn_config.py --bind=:${BEDROCK_SERVER_PORT:-8080} --worker-class=gthread --workers=${WORKERS} --timeout=300 --preload serve_http:app
